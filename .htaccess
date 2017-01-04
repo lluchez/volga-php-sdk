@@ -1,0 +1,48 @@
+# aide : http://www.webrankinfo.com/dossiers/techniques/tutoriel-url-rewriting
+
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+<IfModule mod_rewrite.c>
+
+	# Activation du module de réécriture d'URL :
+	# Activer le module dans la configuration Apache:
+	#    LoadModule rewrite_module modules/mod_rewrite.so
+	RewriteEngine on
+
+	RewriteBase /sdk/
+
+	# ------- Languages  redirection -------
+	# removed: &%{QUERY_STRING}
+	RewriteRule ^([[:alpha:]]{2})/(.*)$               $2&get_core_lang=$1 [L,QSA]
+	RewriteRule ^to_([[:alpha:]]{2})/(.*)$            $2&get_core_lang=$1&set_core_lang= [L,QSA]
+	RewriteRule ^adminTool/([[:alpha:]]{2})/(.*)$     adminTool/$2&get_core_lang=$1 [L,QSA]
+	RewriteRule ^adminTool/to_([[:alpha:]]{2})/(.*)$  adminTool/$2&get_core_lang=$1&set_core_lang= [L,QSA]
+
+
+	# ------- File Types redirection (Admin/Back-Office) -------
+	# RewriteRule ^adminTool/$    admin.php
+	RewriteRule ^adminTool/html/([^(/|\.)]+)\.html?(.*)$                 admin.php?core_html_file=$1$2 [L,QSA]
+	RewriteRule ^adminTool/style/([[:alnum:]_\-\%\ ]+)\.css?(.*)$        admin.php?core_css_file=bo_$1$2 [L,QSA]
+	RewriteRule ^adminTool/javascript/([[:alnum:]_\-\%\.\ ]+)\.js(.*)$   admin.php?core_js_file=bo_$1$2  [L,QSA]
+	RewriteRule ^adminTool/images/([[:alnum:]_\-\.\ ]+)\.(jpg|jpeg|png|bmp|gif|ico)(.*)$  admin.php?core_img_file=$1.$2$3 [L,QSA]
+	RewriteRule ^adminTool/attachments/([[:alnum:]_\-\.\ ]+)\.([[:alnum:]]{3,4})(.*)$     admin.php?core_data_file=$1.$2$3  [L,QSA]
+	RewriteRule ^adminTool/ajax/([^(/|\.)]+)\.(html?|js|xml|txt)?(.*)$   admin.php?core_ajax_file=$1$3 [L,QSA]
+
+	# ------- Admin Safety  redirection -------
+	RewriteRule (^|/)adminTool/  admin.php
+
+
+	# ------- File Types redirection (Visitor/Front-Office) -------
+	RewriteRule ^html/([^(/|\.)]+)\.html?(.*)$                 index.php?core_html_file=$1$2 [L,QSA]
+	RewriteRule ^style/([[:alnum:]_\-\%\ ]+)\.css?(.*)$        index.php?core_css_file=$1$2 [L,QSA]
+	RewriteRule ^javascript/([[:alnum:]_\-\%\.\ ]+)\.js(.*)$   index.php?core_js_file=$1$2  [L,QSA]
+	RewriteRule ^images/([[:alnum:]_\-\.\ ]+)\.(jpg|jpeg|png|bmp|gif|ico)(.*)$  index.php?core_img_file=$1.$2$3 [L,QSA]
+	RewriteRule ^attachments/([[:alnum:]_\-\.\ ]+)\.([[:alnum:]]{3,4})(.*)$     index.php?core_data_file=$1.$2$3  [L,QSA]
+	RewriteRule ^ajax/([^(/|\.)]+)\.(html?|js|xml|txt)?(.*)$   index.php?core_ajax_file=$1$3 [L,QSA]
+
+	# ------- Visitor Safety  redirection -------
+	RewriteRule (^|/)(site|INSTALL)/  index.php
+	RewriteRule (^|/)(conf\.hidden\.php|sdk\.sql)$  index.php
+
+</IfModule>

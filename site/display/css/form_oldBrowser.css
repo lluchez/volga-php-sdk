@@ -1,0 +1,57 @@
+
+/* Legend, fieldset, header and footer */
+form.noCss3 fieldset { text-align: left; background-color: #efefef; margin: 0 0.25em; padding: 0.35em 0.375em; }
+form.noCss3 legend { font-size: 0.85em; color: #444; margin: 0; cursor: default; }
+form.noCss3 div.header { text-align: left;	padding: 0.125em 0.75em; font-size: 1em; letter-spacing: 0.075em; cursor: default; }
+form.noCss3 div.footer { text-align: center; padding: 0.25em 0; }
+form.noCss3 div.footer input { margin: 0 0.5em; padding: 0 0.5em 0em; font-size: 0.8em; cursor: pointer; }
+
+/* Tr and Td[label/element] */
+form.noCss3 table.form { border-collapse:collapse; }
+form.noCss3 table.form tr td { font-size: 0.9em; }
+form.noCss3 table.form tr td.label { text-align: right; padding-right: 0.5em; vertical-align: top; }
+form.noCss3 table.form tr td.label label { font-weight: bold; }
+form.noCss3 table.form tr td.label label span{ font-weight: normal; font-size: 0.75em; }
+form.noCss3 table.form tr td.element div p { margin: 0; padding: 0; }
+form.noCss3 table.form tr td.element div p label { padding-left: 0.25em; }
+form.noCss3 table.form tr td span.required { font-size: 0.9em; color: #f00; cursor: default; padding: 0 0.5em; }
+
+/* Handle fields errors */
+/*form table.form tr { border: 1px dashed red; background-color: #fff4f4; }*/
+form.noCss3 table.form tr.error td { border: 1px dashed red; background-color: #fff4f4; }
+form.noCss3 table.form tr.error td.label { border-right: none; }
+form.noCss3 table.form tr.error td.element { border-left: none; }
+
+
+/* Input, textarea and select */
+form.noCss3 table.form tr td.element textarea { font-size: 0.97em; }
+form.noCss3 table.form tr td.element input, form.noCss3 table.form tr td.element select, form.noCss3 table.form tr td.element label { font-size: 0.8em; }
+form.noCss3 table.form .hasFocus, form.noCss3 input.type_text:focus, form.noCss3 input.type_password:focus, form.noCss3 textarea:focus, form.noCss3 select:focus {background-color: beige; }
+form.noCss3 table.form tr td.element textarea { height: 5em; font-family: Arial; margin: 0.25em 0; }
+form.noCss3  table.form tr td.element input.type_password { width: 9em; }
+
+
+/* Small form specificities */
+form.small  table.form { width: 26em; }
+form.small  table.form tr td.label { width: 8em; }
+form.small  table.form tr td.element input.type_text { width: 23em; }
+form.small  table.form tr td.element textarea { width: 18.75em; }
+
+/* Medium form specificities */
+form.medium  table.form { width: 33em; }
+form.medium  table.form tr td.label { width: 10em; }
+form.medium  table.form tr td.element input.type_text { width: 30em; }
+form.medium  table.form tr td.element textarea { width: 25em; }
+
+/* Large form specificities */
+form.large  table.form { width: 40em; }
+form.large  table.form tr td.label { width: 12em; }
+form.large  table.form tr td.element input.type_text { width: 37em; }
+form.large  table.form tr td.element textarea { width: 30.5em; }
+
+/* XLarge form specificities */
+form.xlarge  table.form { width: 48em; }
+form.xlarge  table.form tr td.label { width: 13em; }
+form.xlarge  table.form tr td.element input.type_text { width: 47em; }
+form.xlarge  table.form tr td.element textarea { width: 38.5em; }
+

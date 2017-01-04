@@ -1,0 +1,6 @@
+
+/* // add methods to FORM/INPUT/TEXTAREA/SELECT
+Object.extend(Form.Element, {}); // methods available for FORM
+Object.extend(Form.Element.Methods, {}); // methods available for INPUT/TEXTAREA/SELECT 
+Element.addMethods(); // recompute Form.Element and Form.Element.Methods
+*/

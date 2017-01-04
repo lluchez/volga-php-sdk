@@ -1,0 +1,95 @@
+
+/* Legend, fieldset, header and footer */
+form.withCss3 fieldset { text-align: left; background-color: #efefef; margin: 0.125em 0.25em; padding: 0.25em 0.375em; }
+form.withCss3 legend { font-size: 0.85em; color: #444; cursor: default; }
+form.withCss3>div.header { text-align: left;	padding: 0.125em 0.75em; font-size: 1em; letter-spacing: 0.075em; cursor: default; }
+form.withCss3>div.footer { text-align: center; padding: 0.25em 0; }
+form.withCss3>div.footer input { margin: 0 0.5em; padding: 0 0.5em 0em; font-size: 0.8em; cursor: pointer; }
+
+
+/* Spans, labels, divs */
+form.withCss3 fieldset>div { margin: 0; padding-top: 0.125em; border: 1px solid transparent; }
+form.withCss3 fieldset>div.error { border: 1px dashed red; background-color: #fff4f4; }
+form.withCss3 fieldset>div.error+div.error { border-top: 1px solid transparent; }
+form.withCss3 fieldset>div>label, form.withCss3>p>input { display: inline-block; vertical-align: top; }
+form.withCss3 fieldset>div>label:first-child { text-align: right; margin: 0 0.75em 0 0.25em; font-weight: bold; font-size: 0.95em; }
+form.withCss3 fieldset>div>label>span { display: block; font-size: 0.75em; color: #444; font-weight: normal; }
+form.withCss3 fieldset>div>span.required { display: inline; font-size: 0.9em; color: #f00; cursor: default; padding: 0 0.5em; margin-left: -0.25em; vertical-align: top; }
+
+
+/* inputs */
+form.withCss3 input[type=password] { width: 9em; }
+form.withCss3 input[type=file] { font-size: 0.8em; }
+form.withCss3 input[type=text]:focus, form.withCss3 input[type=password]:focus, form.withCss3 textarea:focus, form.withCss3 select:focus {background-color: beige; }
+form.withCss3 input[type=text], form.withCss3 input[type=password], form.withCss3 textarea { padding: 0.125em 0.25em; }
+form.withCss3 input[type=checkbox], form.withCss3 input[type=radio] { width: auto; margin: 0; margin-top: 0.125em; }
+form.withCss3 input+label { width: auto; margin: 0em;  font-size: 0.85em; display: inline-block; vertical-align: top; padding: 0 0 0 0.375em; }
+form.withCss3 select, form.withCss3 input[type=text], form.withCss3 input[type=password] { font-size: 0.8em; }
+form.withCss3 textarea { font-size: 0.85em; height: 5em; font-family: inherit; }
+form.withCss3 fieldset>div>input { width: 18em; margin-top: 0.0em; background-color: white; }
+form.withCss3 fieldset>div>input+label { padding-top: 0.25em; }
+
+
+/* checkbox and radios with multiple choices */
+form.withCss3 fieldset>div>div { display: inline-block; width: auto; margin: 0; }
+form.withCss3 fieldset>div>div>p { margin: 0.25em 0; }
+form.withCss3 fieldset>div>div>p>input { margin-left: 0; margin-bottom: 0.125em; vertical-align: top; }
+form.withCss3 fieldset>div>div>p>input+label { padding-top: 0.125em; }
+
+
+
+/* Small form specificities */
+form.withCss3.small fieldset>div>label:first-child { width: 9em; }
+form.withCss3.small fieldset>div>input[type=text] { width: 17.5em; }
+form.withCss3.small fieldset>div>textarea  { width: 16em; }
+form.withCss3.small fieldset>div>input[type=file] { width: 18em; }
+
+/* Normal form specificities (default) */
+form.withCss3.medium fieldset>div>label:first-child { width: 10em; }
+form.withCss3.medium fieldset>div>input[type=text] { width: 25em; }
+form.withCss3.medium fieldset>div>textarea { width: 23.5em; }
+form.withCss3.medium fieldset>div>input[type=file] { width: 25.5em; }
+
+/* Large form specificities */
+form.withCss3.large fieldset>div>label:first-child { width: 10em; }
+form.withCss3.large fieldset>div>input[type=text] { width: 34em; }
+form.withCss3.large fieldset>div>textarea { width: 32em; height: 7em;}
+form.withCss3.large fieldset>div>input[type=file] { width: 34.5em; }
+
+/* XLarge form specificities */
+form.withCss3.xlarge fieldset>div>label:first-child { width: 11em; }
+form.withCss3.xlarge fieldset>div>input[type=text] { width: 43em; }
+form.withCss3.xlarge fieldset>div>textarea { width: 40em; height: 8em; }
+form.withCss3.xlarge fieldset>div>input[type=file] { width: 42.5em; }
+
+
+
+
+/** 
+	If select contains too long text, try to set a width:
+	it can be interpreted as max-width size
+**/
+
+
+/*************************************
+                BUGS
+              --------
+Textarea: too long under netscape and IE
+form fieldset>div>div>p>input: elements rendered on the left :S
+
+*************************************/
+
+
+/*
+form input[type=button], form input[type=submit], form input[type=reset], form input.buttonOut
+{
+	background-color: beige; 
+	border: 2px solid #CCC;
+}
+
+form input[type=button]:hover, form input[type=submit]:hover, form input[type=reset]:hover, form input.buttonOver
+{ 
+	background-color: #CCC; 
+	border: 2px solid beige;
+}
+*/
